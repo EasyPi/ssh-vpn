@@ -1,0 +1,6 @@
+iface tun0 inet static
+    pre-up sleep 5
+    address 10.0.0.100
+    pointopoint 10.0.0.200
+    netmask 255.255.255.0
+    up arp -sD 10.0.0.200 eth0 pub
